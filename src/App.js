@@ -17,17 +17,17 @@ function App() {
 		"pink",
 	];
 	const introList = [
-		["Look at that", "!"],
-		["Oh, didn't you hear? She has a", "."],
-		["Oh, didn't you hear? He has a", "."],
-		["Oh, didn't you hear? They have a", "."],
-		["What's that", "?"],
-		["Wow, what a", "!"],
-		["Nothing beats a", "."],
-		["You've gotta try a", "!"],
-		["Don't worry, I have a", "!"],
-		["Not another", "!"],
-		["Look, sometimes you need", "."],
+		"Look at that",
+		"Oh, didn't you hear? She has a",
+		"Oh, didn't you hear? He has a",
+		"Oh, didn't you hear? They have a",
+		"What's that",
+		"Wow, what a",
+		"Nothing beats a",
+		"You've gotta try a",
+		"Don't worry, I have a",
+		"Not another",
+		"Look, sometimes you need",
 	];
 	useEffect(() => {
 		setAdjective(
