@@ -17,11 +17,17 @@ function App() {
 		"pink",
 	];
 	const introList = [
-		"Look at that",
-		"Oh, didn't you hear? She has a",
-		"Oh, didn't you hear? He has a",
-		"Oh, didn't you hear? They have a",
-		"What's that",
+		["Look at that", "!"],
+		["Oh, didn't you hear? She has a", "."],
+		["Oh, didn't you hear? He has a", "."],
+		["Oh, didn't you hear? They have a", "."],
+		["What's that", "?"],
+		["Wow, what a", "!"],
+		["Nothing beats a", "."],
+		["You've gotta try a", "!"],
+		["Don't worry, I have a", "!"],
+		["Not another", "!"],
+		["Look, sometimes you need", "."],
 	];
 	useEffect(() => {
 		setAdjective(
@@ -38,13 +44,14 @@ function App() {
 		>
 			<div className="w-5/6 m-auto">
 				<div className="text-2xl">
-					{intro}
+					{intro[0]}
 					{["a", "e", "i", "o", "u"].includes(adjective[0]) &&
-						intro[intro.length - 1] === "a" &&
+						intro[0][intro[0].length - 1] === "a" &&
 						"n"}
 				</div>
 				<div className="text-9xl">
 					{adjective} {noun}
+					{intro[1]}
 				</div>
 			</div>
 		</div>
