@@ -15,7 +15,10 @@ function App() {
 	return (
 		<div className="absolute flex w-full h-full text-center text-white bg-indigo-900">
 			<div className="w-5/6 m-auto">
-				<div className="text-2xl">Oh, didn't you hear? She has a</div>
+				<div className="text-2xl">
+					Oh, didn't you hear? She has a
+					{["a", "e", "i", "o", "u"].includes(adjective[0]) && "n"}
+				</div>
 				<div className="text-9xl">
 					{adjective} {noun}
 				</div>
