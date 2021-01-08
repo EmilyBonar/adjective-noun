@@ -5,6 +5,7 @@ function App() {
 	const [adjective, setAdjective] = useState("");
 	const [noun, setNoun] = useState("");
 	const [backgroundColor, setBackgroundColor] = useState("indigo");
+	const [intro, setIntro] = useState("Look at that");
 	const colorList = [
 		"gray",
 		"red",
@@ -15,12 +16,20 @@ function App() {
 		"purple",
 		"pink",
 	];
+	const introList = [
+		"Look at that",
+		"Oh, didn't you hear? She has a",
+		"Oh, didn't you hear? He has a",
+		"Oh, didn't you hear? They have a",
+		"What's that",
+	];
 	useEffect(() => {
 		setAdjective(
 			adjectiveList[Math.floor(Math.random() * adjectiveList.length)],
 		);
 		setNoun(nounList[Math.floor(Math.random() * nounList.length)]);
 		setBackgroundColor(colorList[Math.floor(Math.random() * colorList.length)]);
+		setIntro(introList[Math.floor(Math.random() * introList.length)]);
 	}, []);
 
 	return (
@@ -29,8 +38,10 @@ function App() {
 		>
 			<div className="w-5/6 m-auto">
 				<div className="text-2xl">
-					Oh, didn't you hear? She has a
-					{["a", "e", "i", "o", "u"].includes(adjective[0]) && "n"}
+					{intro}
+					{["a", "e", "i", "o", "u"].includes(adjective[0]) &&
+						intro[intro.length - 1] == "a" &&
+						"n"}
 				</div>
 				<div className="text-9xl">
 					{adjective} {noun}
