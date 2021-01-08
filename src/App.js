@@ -27,7 +27,7 @@ function App() {
 		"You've gotta try a",
 		"Don't worry, I have a",
 		"Not another",
-		"Look, sometimes you need",
+		"Look, sometimes you need a",
 	];
 	useEffect(() => {
 		setAdjective(
