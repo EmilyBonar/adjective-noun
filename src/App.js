@@ -44,14 +44,13 @@ function App() {
 		>
 			<div className="w-5/6 m-auto">
 				<div className="text-2xl">
-					{intro[0]}
+					{intro}
 					{["a", "e", "i", "o", "u"].includes(adjective[0]) &&
-						intro[0][intro[0].length - 1] === "a" &&
+						intro[intro.length - 1] === "a" &&
 						"n"}
 				</div>
 				<div className="text-9xl">
 					{adjective} {noun}
-					{intro[1]}
 				</div>
 			</div>
 		</div>
