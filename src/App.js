@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { nounList, adjectiveList } from "./data.js";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [adjective, setAdjective] = useState("");
+	const [noun, setNoun] = useState("");
+
+	useEffect(() => {
+		setAdjective(
+			adjectiveList[Math.floor(Math.random() * adjectiveList.length)],
+		);
+		setNoun(nounList[Math.floor(Math.random() * nounList.length)]);
+	}, []);
+
+	return (
+		<div className="absolute flex w-full h-full text-center text-white bg-indigo-900">
+			<div className="w-5/6 m-auto">
+				<div className="text-2xl">Oh, didn't you hear? She has a</div>
+				<div className="text-9xl">
+					{adjective} {noun}
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;
