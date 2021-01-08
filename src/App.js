@@ -40,7 +40,7 @@ function App() {
 				<div className="text-2xl">
 					{intro}
 					{["a", "e", "i", "o", "u"].includes(adjective[0]) &&
-						intro[intro.length - 1] == "a" &&
+						intro[intro.length - 1] === "a" &&
 						"n"}
 				</div>
 				<div className="text-9xl">
