@@ -1,43 +1,14 @@
-import { useEffect, useState } from "react";
-import { nounList, adjectiveList } from "./data.js";
-
-const colorList = [
-  "gray",
-  "red",
-  "yellow",
-  "green",
-  "blue",
-  "indigo",
-  "purple",
-  "pink",
-];
-const introList = [
-  "Look at that",
-  "Oh, didn't you hear? She has a",
-  "Oh, didn't you hear? He has a",
-  "Oh, didn't you hear? They have a",
-  "What's that",
-  "Wow, what a",
-  "Nothing beats a",
-  "You've gotta try a",
-  "Don't worry, I have a",
-  "Not another",
-  "Look, sometimes you need a",
-];
+import { useMemo } from "react";
+import { nounList, adjectiveList, colorList, introList } from "./data.js";
 
 function App() {
-  const [adjective, setAdjective] = useState("");
-  const [noun, setNoun] = useState("");
-  const [backgroundColor, setBackgroundColor] = useState("indigo");
-  const [intro, setIntro] = useState("Look at that");
-
-  useEffect(() => {
-    setAdjective(
-      adjectiveList[Math.floor(Math.random() * adjectiveList.length)]
-    );
-    setNoun(nounList[Math.floor(Math.random() * nounList.length)]);
-    setBackgroundColor(colorList[Math.floor(Math.random() * colorList.length)]);
-    setIntro(introList[Math.floor(Math.random() * introList.length)]);
+  const [adjective, noun, backgroundColor, intro] = useMemo(() => {
+    return [
+      adjectiveList[Math.floor(Math.random() * adjectiveList.length)],
+      nounList[Math.floor(Math.random() * nounList.length)],
+      colorList[Math.floor(Math.random() * colorList.length)],
+      introList[Math.floor(Math.random() * introList.length)],
+    ];
   }, []);
 
   return (
@@ -51,7 +22,7 @@ function App() {
             intro[intro.length - 1] === "a" &&
             "n"}
         </div>
-        <div className="text-9xl">
+        <div className="text-7xl lg:text-9xl">
           {adjective} {noun}
         </div>
       </div>
